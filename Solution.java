@@ -1,23 +1,37 @@
-import java.util.HashMap;
+import java.util.Arrays;
+import java.util.Scanner;
 
-class Solution{
+public class solution {
     public static void main(String[] args) {
-        int[] a= {132,1,333,543,666,765};
-        HashMap<Integer,Integer> map=new HashMap<>();
-        for (int i: a){
-            while (i!=0){
-              int digit=i%10;
-              if(map.containsKey(digit)){
-                  map.put(digit,map.get(digit)+1);
-              }
-              else{
-                  map.put(digit,1);
-              }
-              i/=10;
-            }
-            System.out.println(map);
-            map.clear();
-        }
+        Scanner in=new Scanner(System.in);
+  boolean ans=true;
+        System.out.println("enter two strings");
+        String s= in.nextLine();
+        String a= in.nextLine();
+        char[] ch;
+        char[] ab;
+       ch= s.toCharArray();
+       ab=a.toCharArray();
+       Arrays.sort(ch);
+       Arrays.sort(ab);
+       if(ch.length!=ab.length){
+           ans=false;
+
+       }else {
+           for (int i = 0; i < ch.length; i++) {
+               if (ch[i] != ab[i]) {
+                   ans = false;
+                   break;
+               }
+           }
+       }
+           if (ans) {
+               System.out.println("hai");
+           } else {
+               System.out.println("nhi ha");
+           }
 
     }
+
+
 }

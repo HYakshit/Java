@@ -8,7 +8,6 @@ public class Prime_freq {
         System.out.print("Enter Prime Numbers\t");
         for (i = 0; i < a.length; i++) {
             a[i] = aja.nextInt();
-
         }
         for (int num : a) {
             System.out.print(num + "- ");

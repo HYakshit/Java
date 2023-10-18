@@ -4,7 +4,7 @@ public class febbo {
     public static void fibo(int limit) {
 int num1=0,num2=1;
         System.out.print(num1+" "+num2);
-        for(int i=2;i<=limit;i++){
+        for(int i=1;i<limit;i++){
             int temp=num1+num2;
             System.out.print(" "+temp);
             num1=num2;
