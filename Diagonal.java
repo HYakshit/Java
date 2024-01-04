@@ -4,7 +4,7 @@ public class Diagonal {
     public static void main(String[] args) {
         int[][] a = new int[3][3];
         Scanner in = new Scanner(System.in);
-        System.out.println("enter 9 element of 3*3 matrix");
+        System.out.println("enter 9 elements of 3*3 matrix");
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < a[i].length; j++) {
                 a[i][j] = in.nextInt();
