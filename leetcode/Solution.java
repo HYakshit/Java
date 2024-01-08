@@ -3,6 +3,25 @@ package leetcode;
 import java.util.*;
 
 class Solution {
+    public String multiply(String num1, String num2) {
+        // 43
+        // Given two non-negative integers num1 and num2 represented as strings, return
+        // the product of num1 and num2, also represented as a string.
+
+        // Note: You must not use any built-in BigInteger library or convert the inputs
+        // to integer directly.
+
+        // Example 1:
+
+        // Input: num1 = "2", num2 = "3"
+        // Output: "6"
+        long n = Long.parseLong(num1);
+        long j = Long.parseLong(num2);
+        long sol = n 
+        * j;
+        return Long.toString(sol);
+    }
+
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         // 88
         // You are given two integer arrays nums1 and nums2, sorted in non-decreasing
@@ -217,8 +236,11 @@ class Solution {
             // }
 
             // 35. Search Insert Position
-            int[] ar2 = { 1, 3, 5, 6 };
-            System.out.println(obj.searchInsert(ar2, 5));
+            // int[] ar2 = { 1, 3, 5, 6 };
+            // System.out.println(obj.searchInsert(ar2, 5));
+
+            // string multiply
+            System.out.println(obj.multiply("123456789", "987654321"));
         }
     }
 }
