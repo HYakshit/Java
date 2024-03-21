@@ -2,7 +2,7 @@ package leetcode;
 
 import java.util.*;
 
-class Solution{
+class Methods{
     public String multiply(String num1, String num2) {
         // 43
         // Given two non-negative integers num1 and num2 represented as strings, return
@@ -10,6 +10,7 @@ class Solution{
 
         // Note: You must not use any built-in BigInteger library or convert the inputs
         // to integer directly.
+
         // Example 1:
 
         // Input: num1 = "2", num2 = "3"
@@ -82,12 +83,18 @@ class Solution{
             j++;
             k++;
         }
+        // for (int ele : c) {
+        // System.out.println(ele + " ");
+        // }
         float ans = 0;
         int arrayLength = c.length;
         if (arrayLength % 2 == 0) {
+            System.out.println('k');
             int first = arrayLength / 2 - 1;
             int second = (arrayLength / 2);
-            return (float) ((c[first] + c[second]) / 2.0f);
+            System.out.println(c[first] + "" + c[second]);
+            ans = (float) ((c[first] + c[second]) / 2);
+            return ans + 0.5f;
         } else {
             int index = arrayLength / 2;
             ans = c[index];
@@ -96,16 +103,6 @@ class Solution{
     }
 
     public int majorityElement(int[] nums) {
-              // 169
-        // Given an array nums of size n, return the majority element.
-
-        // The majority element is the element that appears more than ⌊n / 2⌋ times. You
-        // may assume that the majority element always exists in the array.
-
-        // Example 1:
-
-        // Input: nums = [3,2,3]
-        // Output: 3
         int num = nums[0];
         HashMap<Integer, Integer> map = new HashMap<>();
 
@@ -115,7 +112,7 @@ class Solution{
             } else {
                 map.put(nums[i], 1);
             }
-            if (map.get(nums[i]) > (nums.length / 2)) {
+            if (map.get(nums[i]) > nums.length / 2) {
                 num = nums[i];
                 break;
             }
@@ -125,6 +122,16 @@ class Solution{
     }
 
     public int trailingZeroes(int n) {
+        // 169
+        // Given an array nums of size n, return the majority element.
+
+        // The majority element is the element that appears more than ⌊n / 2⌋ times. You
+        // may assume that the majority element always exists in the array.
+
+        // Example 1:
+
+        // Input: nums = [3,2,3]
+        // Output: 3
         int sum = 0;
         while (n > 0) {
             sum += (n / 5);
@@ -145,14 +152,13 @@ class Solution{
         }
         for (int i = len; i >= 0; i--) {
             if (digits[i] == 9) {
-                digits[i] = 0;
                 if (i == 0) {
                     ar = new int[digits.length + 1];
                     Arrays.fill(ar, 0);
                     ar[0] = 1;
                     return ar;
                 }
-             
+                digits[i] = 0;
             } else {
                 digits[i] += 1;
                 return digits;
@@ -197,47 +203,44 @@ class Solution{
         return start;
     }
 
-}
-class Input {
-    public static void main(String[] args) {
-        Solution obj = new Solution();
+    class Solution {
+        public static void main(String[] args) {
+            Methods obj = new Methods();
 
-        // plus one------
-        // int[] ar = {1,2,3,0,0,9};
-        // int[] ar2 = {2,6,7};
-        // int[] sol = obj.plusOne(ar);
-        // for (int i : sol) {
-        // System.out.print(i + " ");
-        // }
+            // plus one------
+            // int[] ar = {1,2,3,0,0,0};
+            // int[] ar2 = {2,6,7};
+            // int[] sol = obj.plusOne(ar);
+            // for (int i : sol) {
+            // System.out.print(i + " ");
+            // }
 
-        // findMedianSortedArrays------
-        //     int[] ar = {1,2,3,4};
-        // int[] ar2 = {0,5};
-        // float sol = obj.findMedianSortedArrays(ar, ar2);
-        // System.out.println(sol);
+            // findMedianSortedArrays------
+            // float sol = obj.findMedianSortedArrays(ar, ar2);
+            // System.out.println(sol);
 
-        // majority element-----
-        //   int[] ar = {1,3,3,3,3,9};
-        // System.out.println(obj.majorityElement(ar));
+            // majority element-----
+            // System.out.println(obj.majorityElement(ar));
 
-        // trailing zeroes-------
-        // System.out.println(obj.trailingZeroes(150));
+            // trailing zeroes-------
+            // System.out.println(obj.trailingZeroes(150));
 
-        // merge sorted-----
-        // int[] ar = {1,2,3,0,0,0};
-        // int[] ar2 = {2,6,7};
-        // int m=ar2.length;
-        // int n=ar2.length;
-        // obj.merge(ar, m, ar2, n);
-        // for(int ele:ar){
-        // System.out.println(ele);
-        // }
+            // merge sorted-----
+            // int[] ar = {1,2,3,0,0,0};
+            // int[] ar2 = {2,6,7};
+            // int m=ar2.length;
+            // int n=ar2.length;
+            // obj.merge(ar, m, ar2, n);
+            // for(int ele:ar){
+            // System.out.println(ele);
+            // }
 
-        // 35. Search Insert Position
-        // int[] ar2 = { 1, 3, 5, 6 };
-        // System.out.println(obj.searchInsert(ar2, 5));
+            // 35. Search Insert Position
+            int[] ar2 = { 1, 3, 5, 6 };
+            System.out.println(obj.searchInsert(ar2, 5));
 
-        // string multiply
-        // System.out.println(obj.multiply("123456789", "987654321"));
+            // string multiply
+            // System.out.println(obj.multiply("123456789", "987654321"));
+        }
     }
 }
