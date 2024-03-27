@@ -1,8 +1,9 @@
 package leetcode;
 
+// import java.lang.reflect.Array;
 import java.util.*;
 
-class Solution{
+class Solution {
     public String multiply(String num1, String num2) {
         // 43
         // Given two non-negative integers num1 and num2 represented as strings, return
@@ -16,8 +17,8 @@ class Solution{
         // Output: "6"
         long n = Long.parseLong(num1);
         long j = Long.parseLong(num2);
-        long sol = n 
-        * j;
+        long sol = n
+                * j;
         return Long.toString(sol);
     }
 
@@ -96,7 +97,7 @@ class Solution{
     }
 
     public int majorityElement(int[] nums) {
-              // 169
+        // 169
         // Given an array nums of size n, return the majority element.
 
         // The majority element is the element that appears more than ⌊n / 2⌋ times. You
@@ -152,7 +153,7 @@ class Solution{
                     ar[0] = 1;
                     return ar;
                 }
-             
+
             } else {
                 digits[i] += 1;
                 return digits;
@@ -160,17 +161,6 @@ class Solution{
         }
         digits[len] += 1;
         return digits;
-    }
-
-    public int removeDuplicates(int[] nums) {
-        int j = 1;
-        for (int i = 1; i < nums.length; i++) {
-            if (nums[i] != nums[i - 1]) {
-                nums[j] = nums[i];
-                j++;
-            }
-        }
-        return j;
     }
 
     public int searchInsert(int[] nums, int target) {
@@ -197,11 +187,12 @@ class Solution{
         return start;
     }
 
+
 }
+
 class Input {
     public static void main(String[] args) {
         Solution obj = new Solution();
-
         // plus one------
         // int[] ar = {1,2,3,0,0,9};
         // int[] ar2 = {2,6,7};
@@ -211,13 +202,13 @@ class Input {
         // }
 
         // findMedianSortedArrays------
-        //     int[] ar = {1,2,3,4};
+        // int[] ar = {1,2,3,4};
         // int[] ar2 = {0,5};
         // float sol = obj.findMedianSortedArrays(ar, ar2);
         // System.out.println(sol);
 
         // majority element-----
-        //   int[] ar = {1,3,3,3,3,9};
+        // int[] ar = {1,3,3,3,3,9};
         // System.out.println(obj.majorityElement(ar));
 
         // trailing zeroes-------
@@ -239,5 +230,6 @@ class Input {
 
         // string multiply
         // System.out.println(obj.multiply("123456789", "987654321"));
+
     }
 }
