@@ -5,8 +5,9 @@ public class recursion1 {
         int num = 5;
         int fac = factorial(num);
 
-System.out.println(fac);
+        System.out.println(fac);
     }
+
     public static int factorial(int num) {
         if (num == 0) {
             return 1;
