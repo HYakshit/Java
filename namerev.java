@@ -1,7 +1,7 @@
 import java.util.Scanner;
 class namerev{
 	public static void main (String[] args) {
-		String str,nstr="";
+		String str,reversed="";
         char ch;
 		Scanner aja=new Scanner(System.in);
         System.out.print("Enter string");
@@ -9,9 +9,9 @@ class namerev{
 	for (int i=0; i<str.length(); i++)
 	{
 		ch= str.charAt(i);
-		nstr= ch+nstr;
+		reversed= ch+reversed;
 	}
-	System.out.println("Reversed string "+ nstr);
+	System.out.println("Reversed string "+ reversed);
 	aja.close();
 	}
 }

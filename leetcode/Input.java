@@ -190,7 +190,7 @@ class Solution {
 
 }
 
-class Input {
+public class Input {
     public static void main(String[] args) {
         Solution obj = new Solution();
         // plus one------
