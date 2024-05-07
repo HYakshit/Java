@@ -21,24 +21,4 @@ public class ArrayListClass {
         // print
         System.out.println(list);
     }
-
-    public static void main(String[] args) {
-        ArrayList<Integer> list = new ArrayList<>();
-        // ListExplained(list);
-
-        Scanner in = new Scanner(System.in);
-        int element = 0,sum=0, i = 0;
-        while (element != -1) {
-            System.out.println("enter " + (++i) + "st number (-1 to exit)");
-            element = in.nextInt();
-            if (element != -1) {
-                list.add(element);
-            }
-        }
-       for (int j = 0; j < list.size(); j++) {
-        sum+=list.get(j);
-       }
-        System.out.println("sum is"+sum+" list size is"+list.size());
-    
-    }
-}
+ }

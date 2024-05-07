@@ -1,4 +1,4 @@
-class vowels {
+class FindVowels {
     public static void main(String[] args) {
         String str="akshit mahajan";
         int  count=0;

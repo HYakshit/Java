@@ -1,6 +1,8 @@
+package arrays;
+
 import java.util.*;
 
-public class Arraysort {
+public class BubbleSort {
     public static void main(String[] args) {
         int s, i, j, temp;
         try (Scanner aja = new Scanner(System.in)) {

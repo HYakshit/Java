@@ -10,6 +10,7 @@ public class AnagramChecker {
         str1=aja.nextLine();
         str2=aja.nextLine();
 
+
         if (isAnagram(str1, str2)) {
             System.out.println(str1 + " and " + str2 + " are anagrams.");
         } else {
