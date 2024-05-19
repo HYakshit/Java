@@ -1,41 +1,50 @@
+//a
+class a {
+    int parent;
+    int age;
 
-class a{
-int  parent;
-int age;
-a(int age){
-this.age=age;
+    a(int age) {
+        this.age = age;
+    }
+
+    void info() {
+        System.out.println("parent age is" + age);
+    }
 }
-void info(){
-    System.out.println("parent age is"+age);
-}    
+//b
+class b extends a {
+    int boy;
+    int age;
+
+    b(int age) {
+        super(0);
+        this.age = age;
+    }
+
+    void info() {
+        System.out.println("boy age is" + age);
+    }
 }
-class b extends a{
-int  boy;
-int age;
-b(int age){
-    super(0);
-    this.age=age;
+//c
+class c extends a {
+    int girl;
+    int age;
+
+    c(int age) {
+        super(0);
+        this.age = age;
+    }
+
+    void info() {
+        System.out.println("girl age is" + age);
+    }
 }
-void info(){
-    System.out.println("boy age is"+age);
-}
-}
-class c extends a{
-int  girl;
-int age;
-c(int age){
-    super(0);
-    this.age=age;
-}
-void info(){
-    System.out.println("girl age is"+age);
-}
-}
-public class Intersect_array{
+//main
+public class Intersect_array {
     public static void main(String[] args) {
-        a obj=new a(30);
-        b objb=new b(18);
-        c objc=new c(10);
+        a obj = new a(30);
+        b objb = new b(18);
+        c objc = new c(10);
 
         obj.info();
         objb.info();
