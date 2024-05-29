@@ -1,9 +1,14 @@
 package leetcode;
 
 // import java.lang.reflect.Array;
+
+import arrays.Arrayhelper;
+
 import java.util.*;
 
 class Solution {
+    Arrayhelper ahelper = new Arrayhelper();
+
     public String multiply(String num1, String num2) {
         // 43
         // Given two non-negative integers num1 and num2 represented as strings, return
@@ -17,8 +22,7 @@ class Solution {
         // Output: "6"
         long n = Long.parseLong(num1);
         long j = Long.parseLong(num2);
-        long sol = n
-                * j;
+        long sol = n * j;
         return Long.toString(sol);
     }
 
@@ -139,7 +143,7 @@ class Solution {
         int[] ar;
         if (len == 0) {
             if (digits[len] == 9) {
-                return new int[] { 1, 0 };
+                return new int[]{1, 0};
             }
             digits[len] += 1;
             return digits;
@@ -187,12 +191,107 @@ class Solution {
         return start;
     }
 
+    public int[] fairCandySwap(int[] aliceSizes, int[] bobSizes) {
+        Arrays.sort(aliceSizes);
+        Arrays.sort(bobSizes);
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int i = 0; i < aliceSizes.length; i++) {
+            if (aliceSizes[i] != bobSizes[i]) {
+                if (aliceSizes[i] < bobSizes[i]) {
+                    list.add(aliceSizes[i]);
+                    list.add(bobSizes[i]);
+                }
+                list.add(aliceSizes[i]);
+                list.add(bobSizes[i]);
+                break;
+            }
+        }
+        int[] res = new int[list.size()];
+        for (int i = 0; i < res.length; i++) {
+            res[i] = list.get(i);
+        }
+        return res;
+    }
 
+    public boolean containsDuplicate(int[] nums) {
+        Arrays.sort(nums);
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] == nums[i + 1]) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public int arraySign(int[] nums) {
+//        1822
+//        There is a function signFunc(x) that returns:
+//1 if x is positive.
+//-1 if x is negative.
+//0 if x is equal to 0.
+//You are given an integer array nums. Let product be the product of all values in the array nums.
+//Return signFunc(product).
+
+        int count = 0, sum = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 0) {
+                return 0;
+            }
+            if (nums[i] < 0) {
+                count++;
+
+            }
+        }
+        if (count % 2 == 0) {
+            return 1;
+        }
+        return -1;
+    }
+
+    public int[] arrayRankTransform(int[] arr) {
+//    Given an array of integers arr, replace each element with its rank.
+//
+//            The rank represents how large the element is. The rank has the following rules:
+//
+//    Rank is an integer starting from 1.
+//    The larger the element, the larger the rank. If two elements are equal, their rank must be the same.
+//            Rank should be as small as possible.
+        if (arr.length == 1) {
+            return new int[]{1};
+        }
+        int[] sorted = Arrays.copyOf(arr, arr.length);
+        Arrays.sort(sorted);
+//        ahelper.parray(sorted);
+        int rank = 1,previous=-1;
+        for (int element : sorted) {
+            if(previous==element){
+                continue;
+            }
+            int i = 0;
+            while (i < arr.length) {
+                if (element == arr[i]) {
+                    arr[i] = rank;
+
+                }
+                i++;
+            }
+            rank++;
+            previous=element;
+        }
+        return arr;
+    }
 }
+
 
 public class Input {
     public static void main(String[] args) {
         Solution obj = new Solution();
+        Arrayhelper ahelper = new Arrayhelper();
+        int[] ar2 = {37, 12, 28, 9, 100, 56, 80, 5, 12};
+        int[] r = obj.arrayRankTransform(ar2);
+        ahelper.parray(r);
+//        int[] ar = {5};
+//        System.out.println(obj.arraySign(ar));
         // plus one------
         // int[] ar = {1,2,3,0,0,9};
         // int[] ar2 = {2,6,7};
@@ -230,6 +329,14 @@ public class Input {
 
         // string multiply
         // System.out.println(obj.multiply("123456789", "987654321"));
-
+//
+//
+//        int[] ali = {1, 1};
+//        int[] bob = {2, 2};
+//        int[] res = obj.fairCandySwap(ali, bob);
+//        ahelper.parray(res);
+//
+//        int[] ali = {1, 4, 5, 6, 7, 61};
+//        System.out.println(obj.containsDuplicate(ali));
     }
 }

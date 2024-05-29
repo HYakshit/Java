@@ -10,24 +10,33 @@ class Commission {
 
     //  for non unbundeling
     float calculate(float orderValue, float baseCommission) {
-        this.baseCommission = baseCommission;
-        float pgCharges = (pg / orderValue) * 100;
-        float baseCharges = (baseCommission / orderValue) * 100;
+//        pg is calculated on CV
+        float pgCharges = (pg * orderValue) / 100;
+        float baseCharges = (baseCommission * orderValue) / 100;
         float gstCharges = (gst * baseCharges) / 100;
+        System.out.println("Pg charges" + pgCharges);
+        System.out.println("base charges" + baseCharges);
+        System.out.println("gst charges" + gstCharges);
         return pgCharges + baseCharges + gstCharges;
 
     }
 
     float calculate(float orderValue, float baseCommission, float killometers, int cap) {
+//        pg is calculated on CV
         float capCharges = (cap * orderValue) / 100;
         float fulfillmentCharges = killometers * fulfillmentFee;
         float pgCharges = (pg * orderValue) / 100;
         float baseCharges = (baseCommission * orderValue) / 100;
-        float gstCharges = (gst * (baseCharges + fulfillmentCharges)) / 100;
-        float totalCharges = fulfillmentCharges + baseCharges + pgCharges;
+        float gstCharges = (gst * (baseCharges + fulfillmentCharges + pgCharges)) / 100;
+        float totalCharges = fulfillmentCharges + baseCharges + pgCharges + gstCharges;
+        System.out.println("cap charges" + capCharges);
         if (totalCharges > capCharges) {
             return capCharges;
         }
+        System.out.println("fulfillment Charges" + fulfillmentCharges);
+        System.out.println("Pg charges" + pgCharges);
+        System.out.println("base charges" + baseCharges);
+        System.out.println("gst charges" + gstCharges);
         return fulfillmentCharges + baseCharges + pgCharges + gstCharges;
     }
 }
