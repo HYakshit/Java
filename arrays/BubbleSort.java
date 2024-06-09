@@ -26,6 +26,8 @@ public class BubbleSort {
                 }
             }
 
+
+
             // output
             System.out.println("sorted elements");
             for (i = 0; i < a.length; i++) {

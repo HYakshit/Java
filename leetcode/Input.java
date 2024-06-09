@@ -1,16 +1,14 @@
 package leetcode;
 
-// import java.lang.reflect.Array;
+import java.util.*;
 
 import arrays.Arrayhelper;
-
-import java.util.*;
 
 class Solution {
     Arrayhelper ahelper = new Arrayhelper();
 
     public String multiply(String num1, String num2) {
-        // 43
+        // 43`
         // Given two non-negative integers num1 and num2 represented as strings, return
         // the product of num1 and num2, also represented as a string.
 
@@ -45,7 +43,6 @@ class Solution {
         // Explanation: The arrays we are merging are [1,2,3] and [2,5,6].
         // The result of the merge is [1,2,2,3,5,6] with the underlined elements coming
         // from nums1.
-
         for (int j = 0, i = m; j < n; j++) {
             nums1[i] = nums2[j];
             i++;
@@ -194,23 +191,19 @@ class Solution {
     public int[] fairCandySwap(int[] aliceSizes, int[] bobSizes) {
         Arrays.sort(aliceSizes);
         Arrays.sort(bobSizes);
-        ArrayList<Integer> list = new ArrayList<>();
-        for (int i = 0; i < aliceSizes.length; i++) {
-            if (aliceSizes[i] != bobSizes[i]) {
-                if (aliceSizes[i] < bobSizes[i]) {
-                    list.add(aliceSizes[i]);
-                    list.add(bobSizes[i]);
+        int[] result = new int[2];
+        int alicesum = ahelper.sumArray(aliceSizes);
+        int bobsum = ahelper.sumArray(bobSizes);
+        for (int i = aliceSizes.length - 1; i >= 0; i--) {
+            for (int j = bobSizes.length - 1; j >= 0; j--) {
+                int difference = aliceSizes[i] - bobSizes[j];
+                if (alicesum - difference == bobsum + difference) {
+                    result[0] = aliceSizes[i];
+                    result[1] = bobSizes[j];
                 }
-                list.add(aliceSizes[i]);
-                list.add(bobSizes[i]);
-                break;
             }
         }
-        int[] res = new int[list.size()];
-        for (int i = 0; i < res.length; i++) {
-            res[i] = list.get(i);
-        }
-        return res;
+        return result;
     }
 
     public boolean containsDuplicate(int[] nums) {
@@ -262,9 +255,9 @@ class Solution {
         int[] sorted = Arrays.copyOf(arr, arr.length);
         Arrays.sort(sorted);
 //        ahelper.parray(sorted);
-        int rank = 1,previous=-1;
+        int rank = 1, previous = -1;
         for (int element : sorted) {
-            if(previous==element){
+            if (previous == element) {
                 continue;
             }
             int i = 0;
@@ -276,26 +269,67 @@ class Solution {
                 i++;
             }
             rank++;
-            previous=element;
+            previous = element;
         }
         return arr;
     }
-}
 
+//    public List<String> commonChars(String[] words) {
+////        1002
+////Given a string array words, return an array of all characters that show up in all strings within the words (including duplicates).
+//// You may return the answer in any order.
+//
+////Input: words = ["bella","label","roller"]
+////Output: ["e","l","l"]
+//    }
+
+    public void cellsInRange(String s) {
+        List<String> list = new ArrayList<>();
+        char startCharacter = s.charAt(0);
+        char endCharacter = s.charAt(4);
+        int startNumber = s.charAt(1) - '0';
+        int endNumber = s.charAt(2) - '0';
+        System.out.println(startNumber + "eno" + endNumber);
+    }
+
+    public static boolean isPallindrome(String str) {
+        String previous = str.replace("^[a-zA-Z0-9]", "").toLowerCase();
+        String reversedStr = new StringBuilder(previous).reverse().toString();
+        return previous.equals(reversedStr);
+    }
+}
 
 public class Input {
     public static void main(String[] args) {
         Solution obj = new Solution();
         Arrayhelper ahelper = new Arrayhelper();
-        int[] ar2 = {37, 12, 28, 9, 100, 56, 80, 5, 12};
-        int[] r = obj.arrayRankTransform(ar2);
-        ahelper.parray(r);
-//        int[] ar = {5};
-//        System.out.println(obj.arraySign(ar));
+
+//       Array declarations
+        int[] duplicateElements = {37, 12, 28, 9, 100, 56, 80, 5, 12};
+        int[] single = {5};
+        int[] unique1 = {2, 6, 7};
+        int[] unique2 = {9, 1, 4, 3, 8};
+        int[] sorted1 = {1, 2, 3, 4};
+        int[] sorted2 = {-3, -1, 0, 5, 88, 9, 8};
+        int[] bothSign = {88, 7, -3, -1, 0, 5, 9, 8};
+
+//        string declarations
+        String numstr = "123456789";
+        String numstr2 = "987654321";
+        String simple = "akshit";
+        String duplicateChars = "popsos";
+        String sortedChars = "abcdefgh";
+
+
+//        arrayRankTransform
+//        int[] r = obj.arrayRankTransform(duplicateElements);
+//        ahelper.parray(r);
+
+//        arraySign
+//        System.out.println(obj.arraySign(bothSign));
+
         // plus one------
-        // int[] ar = {1,2,3,0,0,9};
-        // int[] ar2 = {2,6,7};
-        // int[] sol = obj.plusOne(ar);
+        // int[] sol = obj.plusOne(single);
         // for (int i : sol) {
         // System.out.print(i + " ");
         // }
@@ -303,40 +337,46 @@ public class Input {
         // findMedianSortedArrays------
         // int[] ar = {1,2,3,4};
         // int[] ar2 = {0,5};
-        // float sol = obj.findMedianSortedArrays(ar, ar2);
+        // float sol = obj.findMedianSortedArrays(sorted1, sorted2);
         // System.out.println(sol);
 
         // majority element-----
-        // int[] ar = {1,3,3,3,3,9};
-        // System.out.println(obj.majorityElement(ar));
+        // System.out.println(obj.majorityElement(duplicateElements));
 
         // trailing zeroes-------
         // System.out.println(obj.trailingZeroes(150));
 
         // merge sorted-----
-        // int[] ar = {1,2,3,0,0,0};
-        // int[] ar2 = {2,6,7};
-        // int m=ar2.length;
-        // int n=ar2.length;
-        // obj.merge(ar, m, ar2, n);
-        // for(int ele:ar){
-        // System.out.println(ele);
-        // }
+//         int m=sorted1.length;
+//         int n=sorted2.length;
+//         obj.merge(sorted1, m, sorted2, n);
+//         for(int ele:sorted1){
+//         System.out.println(ele);
+//         }
 
-        // 35. Search Insert Position
-        // int[] ar2 = { 1, 3, 5, 6 };
-        // System.out.println(obj.searchInsert(ar2, 5));
+        // Search Insert Position
+//         System.out.println(obj.searchInsert(unique1, 5));
 
         // string multiply
-        // System.out.println(obj.multiply("123456789", "987654321"));
-//
-//
+//         System.out.println(obj.multiply(numstr,numstr2));
+
+//        fairCandySwap
+//        888
 //        int[] ali = {1, 1};
 //        int[] bob = {2, 2};
 //        int[] res = obj.fairCandySwap(ali, bob);
 //        ahelper.parray(res);
-//
-//        int[] ali = {1, 4, 5, 6, 7, 61};
-//        System.out.println(obj.containsDuplicate(ali));
+//        System.exit(69);
+
+//        containsDuplicate
+//        System.out.println(obj.containsDuplicate(unique1));
+
+//     cellsInRange
+//        obj.cellsInRange("a1:h8");
+//        System.out.println();
+
+//        is pallindrome
+        boolean r = obj.isPallindrome("121121");
+        System.out.println(r);
     }
 }
