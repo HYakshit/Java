@@ -32,7 +32,7 @@ public class Agecalculator {
         System.out.println("Age in hours: " + ageHours + " hours");
         System.out.println("Age in minutes: " + ageMinutes + " minutes");
     }
-    
+
     // Helper method to calculate the number of days in a year
     public static int calculateDaysInYear(int year) {
         if (isLeapYear(year)) {

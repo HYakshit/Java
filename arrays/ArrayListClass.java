@@ -22,4 +22,4 @@ public class ArrayListClass {
         // print
         System.out.println(list);
     }
- }
+}

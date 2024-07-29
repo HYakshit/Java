@@ -57,7 +57,7 @@ public class ExplicitConversionExample {
         System.out.print("String to Array: ");
         for (char c : array) {
             System.out.print(c);
-            
+
         }
         System.out.println();
         // Convert String to double
@@ -81,5 +81,15 @@ public class ExplicitConversionExample {
         char char1 = 'A';
         String charStringValue = Character.toString(char1);
         System.out.println("Char to String: " + charStringValue);
+        int num = 65;
+        practice(num);
+    }
+
+    public static void practice(int num) {
+        System.out.println((char) num);
+        System.out.println(Integer.toString(num));
+        System.out.println((double) num);
+        System.out.println((long) num);
+        System.out.println((byte) num);
     }
 }

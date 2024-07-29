@@ -9,7 +9,7 @@ public class Sumofarray {
     }
 
     public static void main(String[] args) {
-        int[] array = { 2, 4, 6, 8, 10 ,3};
+        int[] array = {2, 4, 6, 8, 10, 3};
         int sum = sumArray(array, array.length - 1); // Start recursion from the last index
         System.out.println("Sum of elements in the array: " + sum);
     }

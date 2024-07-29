@@ -12,7 +12,7 @@ public class Pallindrome {
                 return false;
             }
 
-                iterator--;
+            iterator--;
             first++;
         }
         return true;
@@ -26,7 +26,7 @@ public class Pallindrome {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = in.nextInt();
         }
-        System.out.println("Pallindrome result is "+isPallindrome(arr));
+        System.out.println("Pallindrome result is " + isPallindrome(arr));
 
     }
 

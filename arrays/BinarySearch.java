@@ -2,7 +2,7 @@ package arrays;
 
 public class BinarySearch {
     public static void main(String[] args) {
-        int[] array = {1,2,3,4,5,6,7,8,9};
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         int target = 5;
         int index = GetBinarySearch(array, target);
         System.out.println("Index of target is" + index);

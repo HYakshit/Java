@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class palli {
+public class PalindromeNumber {
     public static void main(String[] args) {
         int num, orig, lastdigit, temp = 0;
         Scanner aja = new Scanner(System.in);

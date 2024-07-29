@@ -22,19 +22,20 @@ public class rotate_array {
         }
         return array;
     }
+
     public static void main(String[] args) {
-        int rotationNumber=3;
+        int rotationNumber = 3;
         Scanner in = new Scanner(System.in);
         System.out.println("enter rotation Number");
         rotationNumber = in.nextInt();
 
-        int[] array = { 1, 2, 3, 4, 5, 6, 7 };
-        int[] result ;
-        result= rotateArray(array,rotationNumber);
+        int[] array = {1, 2, 3, 4, 5, 6, 7};
+        int[] result;
+        result = rotateArray(array, rotationNumber);
         for (int iterable_element : result) {
-            System.out.print(iterable_element+" ");
+            System.out.print(iterable_element + " ");
 
-            
+
         }
     }
 }

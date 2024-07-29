@@ -1,6 +1,8 @@
+package arrays;
+
 import java.util.Scanner;
 
-public class Diagonal {
+public class DiagonalSun {
     public static void main(String[] args) {
         int[][] a = new int[3][3];
         Scanner in = new Scanner(System.in);
@@ -18,11 +20,11 @@ public class Diagonal {
                     dsum = dsum + a[i][j];
                 }
 
-                 if (j == ((a.length - 1) - i)) {
+                if (j == ((a.length - 1) - i)) {
                     rdsum = rdsum + a[i][j];
                 }
             }
-        System.out.println("Sum of diagonal is "+dsum+" Sum of reversed diagonal is "+rdsum);
+        System.out.println("Sum of diagonal is " + dsum + " Sum of reversed diagonal is " + rdsum);
         in.close();
     }
 

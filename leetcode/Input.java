@@ -3,9 +3,20 @@ package leetcode;
 import java.util.*;
 
 import arrays.Arrayhelper;
+import strings.StringHelper;
+
+import javax.swing.*;
 
 class Solution {
-    Arrayhelper ahelper = new Arrayhelper();
+    Arrayhelper arrHelper = new Arrayhelper();
+    StringHelper strHelper = new StringHelper();
+
+    public static boolean isPallindrome(String str) {
+//        used toString to convert stringBuilder object to string object
+        String previous = str;
+        String reversedStr = new StringBuilder(previous).reverse().toString();
+        return previous.equals(reversedStr);
+    }
 
     public String multiply(String num1, String num2) {
         // 43`
@@ -192,8 +203,8 @@ class Solution {
         Arrays.sort(aliceSizes);
         Arrays.sort(bobSizes);
         int[] result = new int[2];
-        int alicesum = ahelper.sumArray(aliceSizes);
-        int bobsum = ahelper.sumArray(bobSizes);
+        int alicesum = arrHelper.sumArray(aliceSizes);
+        int bobsum = arrHelper.sumArray(bobSizes);
         for (int i = aliceSizes.length - 1; i >= 0; i--) {
             for (int j = bobSizes.length - 1; j >= 0; j--) {
                 int difference = aliceSizes[i] - bobSizes[j];
@@ -274,28 +285,63 @@ class Solution {
         return arr;
     }
 
-//    public List<String> commonChars(String[] words) {
-////        1002
-////Given a string array words, return an array of all characters that show up in all strings within the words (including duplicates).
-//// You may return the answer in any order.
+    public int myAtoi(String s) {
+//8
+//        Implement the myAtoi(string s) function, which converts a string to a 32-bit signed integer.
 //
-////Input: words = ["bella","label","roller"]
-////Output: ["e","l","l"]
-//    }
+//The algorithm for myAtoi(string s) is as follows:
+//
+//Whitespace: Ignore any leading whitespace (" ").
+//Signedness: Determine the sign by checking if the next character is '-' or '+', assuming positivity is neither present.
+//Conversion: Read the integer by skipping leading zeros until a non-digit character is encountered or the end of the string is reached. If no digits were read, then the result is 0.
+//Rounding: If the integer is out of the 32-bit signed integer range [-231, 231 - 1], then round the integer to remain in the range. Specifically, integers less than -231 should be rounded to -231, and integers greater than 231 - 1 should be rounded to 231 - 1.
+//Return the integer as the final result.
+        StringBuilder str = new StringBuilder(s.trim());
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < str.length(); i++) {
+            char v = str.charAt(i);
 
-    public void cellsInRange(String s) {
-        List<String> list = new ArrayList<>();
-        char startCharacter = s.charAt(0);
-        char endCharacter = s.charAt(4);
-        int startNumber = s.charAt(1) - '0';
-        int endNumber = s.charAt(2) - '0';
-        System.out.println(startNumber + "eno" + endNumber);
+        }
+        return 0;
     }
 
-    public static boolean isPallindrome(String str) {
-        String previous = str.replace("^[a-zA-Z0-9]", "").toLowerCase();
-        String reversedStr = new StringBuilder(previous).reverse().toString();
-        return previous.equals(reversedStr);
+    public List<String> cellsInRange(String s) {
+        List<String> list = new ArrayList<>();
+        char startCharacter = s.charAt(0);
+        char endCharacter = s.charAt(3);
+        int startNumber = s.charAt(1) - '0';
+        int endNumber = s.charAt(4) - '0';
+
+        for (char i = startCharacter; i <= endCharacter; i++) {
+            for (int j = startNumber; j <= endNumber; j++) {
+                list.add("" + i + j);
+            }
+        }
+        return list;
+    }
+
+    public String[] findWords(String[] words) {
+        String[] keyArray = {"qwertyuiop", "asdfghjkl", "zxcvbnm"};
+        List<String> resultList = new ArrayList<>();
+
+        for (String word : words) {
+            for (String row : keyArray) {
+                if (canBeTyped(word.toLowerCase(), row)) {
+                    resultList.add(word);
+                    break;
+                }
+            }
+        }
+        return resultList.toArray(new String[0]);
+    }
+
+    private boolean canBeTyped(String word, String row) {
+        for (char c : word.toCharArray()) {
+            if (row.indexOf(c) == -1) {
+                return false;
+            }
+        }
+        return true;
     }
 }
 
@@ -303,6 +349,7 @@ public class Input {
     public static void main(String[] args) {
         Solution obj = new Solution();
         Arrayhelper ahelper = new Arrayhelper();
+        StringHelper strHelper = new StringHelper();
 
 //       Array declarations
         int[] duplicateElements = {37, 12, 28, 9, 100, 56, 80, 5, 12};
@@ -312,13 +359,23 @@ public class Input {
         int[] sorted1 = {1, 2, 3, 4};
         int[] sorted2 = {-3, -1, 0, 5, 88, 9, 8};
         int[] bothSign = {88, 7, -3, -1, 0, 5, 9, 8};
+        String[] str1 = {"akshit", "buuuuu", "qwerty"};
 
 //        string declarations
         String numstr = "123456789";
+        String smallnum = "          99";
         String numstr2 = "987654321";
         String simple = "akshit";
         String duplicateChars = "popsos";
         String sortedChars = "abcdefgh";
+
+        String[] result = obj.findWords(str1);
+        for (String str : result) {
+            System.out.println(str);
+        }
+
+        System.out.println(smallnum.trim());
+//        obj.myAtoi(smallnum);
 
 
 //        arrayRankTransform
@@ -372,11 +429,14 @@ public class Input {
 //        System.out.println(obj.containsDuplicate(unique1));
 
 //     cellsInRange
-//        obj.cellsInRange("a1:h8");
-//        System.out.println();
+//        List<String> result= obj.cellsInRange("a1:h8");
+//
+//        System.out.println(result);
 
 //        is pallindrome
-        boolean r = obj.isPallindrome("121121");
-        System.out.println(r);
+//        boolean r = obj.isPallindrome("12111");
+//        System.out.println(r);
+
+//
     }
 }

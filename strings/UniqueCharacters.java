@@ -1,4 +1,6 @@
-public class unique {
+package strings;
+
+public class UniqueCharacters {
     public static void main(String[] args) {
         String input = "taaabbbrrraaat";
 

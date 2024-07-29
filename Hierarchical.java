@@ -11,6 +11,7 @@ class a {
         System.out.println("parent age is" + age);
     }
 }
+
 //b
 class b extends a {
     int boy;
@@ -25,6 +26,7 @@ class b extends a {
         System.out.println("boy age is" + age);
     }
 }
+
 //c
 class c extends a {
     int girl;
@@ -39,8 +41,9 @@ class c extends a {
         System.out.println("girl age is" + age);
     }
 }
+
 //main
-public class Intersect_array {
+public class Hierarchical {
     public static void main(String[] args) {
         a obj = new a(30);
         b objb = new b(18);
