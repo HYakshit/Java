@@ -20,11 +20,11 @@ public class DiagonalSun {
                     dsum = dsum + a[i][j];
                 }
 
-                if (j == ((a.length - 1) - i)) {
+                 if (j == ((a.length - 1) - i)) {
                     rdsum = rdsum + a[i][j];
                 }
             }
-        System.out.println("Sum of diagonal is " + dsum + " Sum of reversed diagonal is " + rdsum);
+        System.out.println("Sum of diagonal is "+dsum+" Sum of reversed diagonal is "+rdsum);
         in.close();
     }
 

@@ -25,6 +25,6 @@ public class LcmHcf {
     }
 
     public static void main(String[] args) {
-        lcmHcf(12, 14);
+        lcmHcf(12,14);
     }
 }

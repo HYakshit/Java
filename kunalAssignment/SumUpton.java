@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class SumUpton {
     public static void listSum() {
-        int sum = 0;
-        Scanner in = new Scanner(System.in);
+        int sum=0;
+        Scanner in=new Scanner(System.in);
         while (true) {
             System.out.print("Enter a number (or 'x' to stop): ");
             String input = in.nextLine();

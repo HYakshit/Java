@@ -17,8 +17,8 @@ public class Intersection {
     }
 
     public static void main(String[] args) {
-        int[] ar1 = {1, 2, 3, 4, 5};
-        int[] ar2 = {2, 3, 4};
+        int[] ar1 = { 1, 2, 3, 4, 5 };
+        int[] ar2 = { 2, 3, 4 };
         Intersection.intersection(ar1, ar2);
     }
 }

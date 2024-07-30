@@ -7,9 +7,9 @@ public class StringHelper {
 //        builder = new StringBuilder(sendedString);
 //    }
 
-    public void trim(String str) {
+   public void trim(String str) {
         for (int i = 0; i < str.length(); i++) {
-            builder = new StringBuilder(str);
+            builder= new StringBuilder(str);
             System.out.println(builder.charAt(i));
         }
     }

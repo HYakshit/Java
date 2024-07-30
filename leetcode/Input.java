@@ -11,13 +11,6 @@ class Solution {
     Arrayhelper arrHelper = new Arrayhelper();
     StringHelper strHelper = new StringHelper();
 
-    public static boolean isPallindrome(String str) {
-//        used toString to convert stringBuilder object to string object
-        String previous = str;
-        String reversedStr = new StringBuilder(previous).reverse().toString();
-        return previous.equals(reversedStr);
-    }
-
     public String multiply(String num1, String num2) {
         // 43`
         // Given two non-negative integers num1 and num2 represented as strings, return
@@ -318,6 +311,13 @@ class Solution {
             }
         }
         return list;
+    }
+
+    public static boolean isPallindrome(String str) {
+//        used toString to convert stringBuilder object to string object
+        String previous = str;
+        String reversedStr = new StringBuilder(previous).reverse().toString();
+        return previous.equals(reversedStr);
     }
 
     public String[] findWords(String[] words) {

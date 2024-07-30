@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Num_frequency {
     public static void main(String[] args) {
-        int[] num = {1, 2, 3, 4, 5, 2, 3, 1, 4, 5, 2, 1, 4, 3, 2, 1};
+        int[] num = { 1, 2, 3, 4, 5, 2, 3, 1, 4, 5, 2, 1, 4, 3, 2, 1 };
 
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < num.length; i++) {

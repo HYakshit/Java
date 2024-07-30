@@ -1,6 +1,4 @@
-package arrays;
-
-/**
+package arrays; /**
  * RemoveArray
  */
 
@@ -21,9 +19,9 @@ public class RemoveDuplicates {
     }
 
     public static void main(String[] args) {
-        Arrayhelper arrayhelper = new Arrayhelper();
+        Arrayhelper arrayhelper=new Arrayhelper();
         int[] ar1 = {1, 2, 4, 4, 7, 3, 3};
-        int[] ar2 = {2, 2, 2, 2, 2};
+        int[] ar2 = {2,2,2,2,2};
 //        removeDuplicates(ar2);
     }
 }

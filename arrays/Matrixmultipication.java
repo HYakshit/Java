@@ -10,12 +10,8 @@ public class Matrixmultipication {
             for (int rowcol = 0; rowcol < matrix[row].length; rowcol++) {
                 matrix3[row][rowcol] = matrix[row][rowcol] * matrix2[rowcol][row];
                 System.out.print(" " + matrix3[row][rowcol]);
-
-
             }
             System.out.println();
-
-
         }
 
     }

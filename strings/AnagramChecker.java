@@ -2,16 +2,15 @@ package strings;
 
 import java.util.Arrays;
 import java.util.Scanner;
-
 // Anagrag is if all characters are present in another array
 public class AnagramChecker {
 
     public static void main(String[] args) {
-        String str1, str2;
-        Scanner aja = new Scanner(System.in);
+        String str1,str2;
+        Scanner aja=new Scanner(System.in);
         System.out.println("enter two strings");
-        str1 = aja.nextLine();
-        str2 = aja.nextLine();
+        str1=aja.nextLine();
+        str2=aja.nextLine();
 
 
         if (isAnagram(str1, str2)) {

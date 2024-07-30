@@ -81,12 +81,12 @@ public class ExplicitConversionExample {
         char char1 = 'A';
         String charStringValue = Character.toString(char1);
         System.out.println("Char to String: " + charStringValue);
-        int num = 65;
+        int num=65;
         practice(num);
     }
 
-    public static void practice(int num) {
-        System.out.println((char) num);
+    public static void practice(int num){
+        System.out.println((char)num);
         System.out.println(Integer.toString(num));
         System.out.println((double) num);
         System.out.println((long) num);

@@ -1,7 +1,7 @@
 package kunalAssignment;
 
 public class fibboUptoN {
-    public static void febbo(int num) {
+    public static void febbo(int num){
         int next = 0;
         int first = 0, second = 1;
         System.out.println("fibonacci Series:" + first + " " + second);
@@ -13,9 +13,8 @@ public class fibboUptoN {
 
         }
     }
-
     public static void main(String[] args) {
-        febbo(10);
+febbo(10);
     }
 }
 
