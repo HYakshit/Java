@@ -20,7 +20,6 @@ public class Pallindrome {
 
     public static void main(String[] args) {
         int[] arr = new int[5];
-        int start = 0, end = arr.length - 1;
         Scanner in = new Scanner(System.in);
         System.out.println("enter 5 elements");
         for (int i = 0; i < arr.length; i++) {
