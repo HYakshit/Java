@@ -3,6 +3,7 @@ package arrays;
 import java.util.*;
 
 public class BubbleSort {
+// places each element at right position with every inner loop iteration
     public static void main(String[] args) {
         int s, i, j, temp;
         try (Scanner aja = new Scanner(System.in)) {
