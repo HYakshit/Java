@@ -1,5 +1,8 @@
 package leetcode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Input {
     //Array declarations
     static int[] repeatedArr = {37, 12, 28, 9, 12, 12, 12, 12, 5, 12};
@@ -11,7 +14,7 @@ public class Input {
     static int[] sorted1Arr = {5, 88, 9, 8, 0, 0, 0, 0};
     static int[] sorted2Arr = {1, 2, 3, 4};
     static int[] bothSignArr = {88, 7, -3, -1, 0, 5, 9, 8};
-    static String[] strArr = {"akshit", "buuuuu", "qwerty"};
+    static String[] strArr = {"a aa a aaaa aaa aaa aaa aaaaaa bbb baba ababa"};
 
     //string declarations
     static String numstr1 = "123456789";
@@ -21,5 +24,8 @@ public class Input {
     static String duplicateChars = "popsos";
     static String str2 = "mahajan";
     static String abc = "abcdefgh";
+
+//    list
+    static ArrayList<String> stringList=new ArrayList<>(List.of("a", "aa", "aaa", "aaaa"));
 
 }

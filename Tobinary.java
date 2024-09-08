@@ -11,7 +11,6 @@ public class Tobinary {
             binary = digit + binary;
             num = num / 2;
         }
-
         System.out.println("The binary representation of " + num + " is " + binary);
     }
 }
