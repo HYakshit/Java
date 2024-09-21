@@ -15,6 +15,7 @@ public class Input {
     static int[] sorted2Arr = {1, 2, 3, 4};
     static int[] bothSignArr = {88, 7, -3, -1, 0, 5, 9, 8};
     static String[] strArr = {"a aa a aaaa aaa aaa aaa aaaaaa bbb baba ababa"};
+    static String[] StrArray2={"leetcode","win","loops","success"};
 
     //string declarations
     static String numstr1 = "123456789";

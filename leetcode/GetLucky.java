@@ -13,30 +13,25 @@ public class GetLucky {
 
     public static int getLucky(String s, int k) {
         char[] ar = s.toCharArray();
-//        int num = 0;
         StringBuilder numAsString = new StringBuilder();
         for (int i = 0; i < ar.length; i++) {
-            int ch = ar[i] - 96;
-            numAsString.append(ch);
+            numAsString.append((int) ar[i]-96);
         }
-        return digitSum(numAsString.toString(), k);
+        return digitSum(numAsString, k);
     }
 
-    public static int digitSum(String num, int k) {
-        char[] digitsArray = num.toCharArray();
+    public static int digitSum(StringBuilder string, int k) {
         int sum = 0;
-        if (k < 1 || digitsArray.length <= 1) {
-            for (char i = 0; i < digitsArray.length; i++) {
-                sum = sum* 10 + digitsArray[i];
+        while (k >= 0) {
+           sum=0;
+            for (char i = 0; i < string.length(); i++) {
+                sum += (string.charAt(i) - '0');
             }
-            return sum;
+            string.setLength(0);
+            string.append(sum);
+            k--;
         }
-        for (int i = 0; i < digitsArray.length; i++) {
-            char ch = digitsArray[i];
-            sum +=ch;
-        }
-
-        return digitSum(Integer.toString(sum), --k);
+        return sum;
     }
 
     public static void asciValue(String str) {
