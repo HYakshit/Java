@@ -1,4 +1,4 @@
-package arrays;
+package DSA;
 
 public class Quicksort {
 

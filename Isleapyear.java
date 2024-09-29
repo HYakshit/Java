@@ -1,5 +1,3 @@
-package kunalAssignment;
-
 public class Isleapyear {
     public static boolean isLeap(int y) {
         if (y % 4 == 0) {

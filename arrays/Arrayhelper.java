@@ -2,13 +2,13 @@ package arrays;
 
 public class Arrayhelper {
 
-    public void parray(int[] array) {
+    public void printAr(int[] array) {
         for (int i : array) {
             System.out.print(i + " ");
         }
     }
 
-    public int[] copyArray(int[] arr) {
+    public int[] copy(int[] arr) {
         int size = arr.length;
         int[] result = new int[size];
         for (int i = 0; i < arr.length; i++) {

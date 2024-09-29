@@ -20,7 +20,6 @@ class Commission {
         return pgCharges + baseCharges + gstCharges;
 
     }
-
     float calculate(float orderValue, float baseCommission, float killometers, int cap) {
 //        pg is calculated on CV
         float capCharges = (cap * orderValue) / 100;

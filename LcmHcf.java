@@ -1,5 +1,3 @@
-package kunalAssignment;
-
 public class LcmHcf {
     public static int[] lcmHcf(int num1, int num2) {
         int[] ar = {1, 1};
@@ -25,6 +23,10 @@ public class LcmHcf {
     }
 
     public static void main(String[] args) {
-        lcmHcf(12,14);
+        for (int i : lcmHcf(2, 6))
+        {
+            System.out.println(i);
+        }
+
     }
 }

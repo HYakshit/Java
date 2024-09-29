@@ -1,5 +1,3 @@
-package kunalAssignment;
-
 public class fibboUptoN {
     public static void febbo(int num){
         int next = 0;

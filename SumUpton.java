@@ -1,5 +1,3 @@
-package kunalAssignment;
-
 import java.util.Scanner;
 
 public class SumUpton {
