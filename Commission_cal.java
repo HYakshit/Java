@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 class Commission {
     float baseCommission, gst, pg, fulfillmentFee;
 
@@ -20,6 +22,7 @@ class Commission {
         return pgCharges + baseCharges + gstCharges;
 
     }
+
     float calculate(float orderValue, float baseCommission, float killometers, int cap) {
 //        pg is calculated on CV
         float capCharges = (cap * orderValue) / 100;
@@ -38,6 +41,13 @@ class Commission {
         System.out.println("gst charges" + gstCharges);
         return fulfillmentCharges + baseCharges + pgCharges + gstCharges;
     }
+
+//    float efficiency(int dials,int connected,int talktimeInMins,int outOff){
+//        DecimalFormat decimalFormat=new DecimalFormat("##.##");
+//        int calls_grace_time=(connected*2)+ (dials-connected);
+//        float result= ((float) (calls_grace_time + talktimeInMins) /outOff)*100;
+//        return decimalFormat.format(result);
+//    }
 }
 
 public class Commission_cal {
@@ -45,5 +55,6 @@ public class Commission_cal {
         Commission obj = new Commission();
         float totalCommission = obj.calculate(100, 25);
         System.out.println("Total commission is " + totalCommission);
+//        System.out.println(obj.efficiency(105,55,204,420));
     }
 }

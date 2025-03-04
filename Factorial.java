@@ -7,7 +7,7 @@ public class Factorial{
         System.out.println("Enter the number");
         num=aja.nextInt();
         if(num==1){
-            System.out.println("Factorial of number " +num+ "is " +fact);
+            System.out.println("Factorial of number " +num+ " is " +fact);
         }
         while(i<=num){
             fact=fact*i;

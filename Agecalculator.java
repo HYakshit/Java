@@ -1,12 +1,12 @@
 public class Agecalculator {
     public static void main(String[] args) {
-        int currentYear = 2023; // Specify the current year
-        int currentMonth = 6; // Specify the current month
-        int currentDay = 12; // Specify the current day
+        int currentYear = 2023;
+        int currentMonth = 6;
+        int currentDay = 12;
 
-        int birthYear = 1990; // Specify the birth year
-        int birthMonth = 5; // Specify the birth month
-        int birthDay = 15; // Specify the birth day
+        int birthYear = 1990;
+        int birthMonth = 5;
+        int birthDay = 15;
 
         int ageYears, ageDays, ageHours, ageMinutes;
 
