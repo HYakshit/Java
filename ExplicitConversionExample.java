@@ -20,7 +20,7 @@ public class ExplicitConversionExample {
         int intValueFromChar = (int) charValue;
         System.out.println("Char to Int: " + intValueFromChar);
 
-        // Convert String to int
+        // Convert String to Array
         String str = "akshit Mahajan";
         char[] strArray = str.toCharArray();
         System.out.print("String to Array: ");

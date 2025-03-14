@@ -14,6 +14,6 @@ public class Isleapyear {
     }
 
     public static void main(String[] args) {
-        isLeap(2024);
+        System.out.println(isLeap(2024));
     }
 }
