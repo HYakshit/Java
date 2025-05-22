@@ -3,10 +3,8 @@ package DSA;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.ArrayList;
-import java.util.Collections;
 
-public class Quicksort {
+public class Random {
     void getSum() {
         int[][] arr = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
         int[][] arr2 = {{7, 8, 9}, {4, 5, 6}, {1, 2, 3}};
@@ -86,6 +84,10 @@ public class Quicksort {
     }
 
     void findmissing() {
+//        Limitations of This Code
+//Only works for one missing number
+//
+//Requires the array to be sorted and continuous
         int[] arr = {1, 3, 4, 5, 6};
         //5️⃣ Find the Missing Number in an array of 1 to N
         int ij = arr[0];

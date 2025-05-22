@@ -4,6 +4,11 @@ import java.util.Scanner;
 
 public class rotate_array {
     static int[] rotateArray(int[] array, int rotationNumber) {
+        if(rotationNumber>array.length){
+            rotationNumber=rotationNumber% array.length;
+        }
+
+
         int[] temp = new int[rotationNumber];
 
         // Store elements to rotate

@@ -1,5 +1,10 @@
 import java.util.Scanner;
-public class Factorial{
+public class
+
+
+
+
+Factorial{
     public static void main(String[] args)
     {
         int num,fact=1,i=1;

@@ -28,6 +28,7 @@ class Commission {
         float capCharges = (cap * orderValue) / 100;
         float fulfillmentCharges = killometers * fulfillmentFee;
         float pgCharges = (pg * orderValue) / 100;
+
         float baseCharges = (baseCommission * orderValue) / 100;
         float gstCharges = (gst * (baseCharges + fulfillmentCharges + pgCharges)) / 100;
         float totalCharges = fulfillmentCharges + baseCharges + pgCharges + gstCharges;

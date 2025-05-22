@@ -23,8 +23,7 @@ public class LcmHcf {
     }
 
     public static void main(String[] args) {
-        for (int i : lcmHcf(2, 6))
-        {
+        for (int i : lcmHcf(2, 6)) {
             System.out.println(i);
         }
 

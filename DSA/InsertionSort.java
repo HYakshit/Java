@@ -4,8 +4,9 @@ import leetcode.Input;
 
 public class InsertionSort {
     public static void main(String[] args) {
-        for(int i:insertionSort(Input.unsortedArr)){
-            System.out.println(i);
+        int[] result=insertionSort(Input.unsortedArr);
+        for(int i:result){
+            System.out.print(i+" ");
         }
 
     }
