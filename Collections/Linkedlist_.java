@@ -7,7 +7,7 @@ public class Linkedlist_ {
         linkedList.add("Dog");
         linkedList.add("Cat");
         linkedList.add("Rabbit");
-
+        linkedList.add("bandar");
         // Accessing elements
         System.out.println("First element: " + linkedList.getFirst());
 
@@ -23,6 +23,9 @@ public class Linkedlist_ {
 
         // Removing an element
         linkedList.remove("Cat");
+        linkedList.removeLast();
+        linkedList.removeFirst();
+
         System.out.println("After removing Cat: " + linkedList);
     }
 }
